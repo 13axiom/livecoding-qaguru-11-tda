@@ -15,8 +15,9 @@ public class SelenideWikiSoftAssertionsPageTests {
         //открыть страницу репы selenide
         open("https://github.com/selenide/selenide");
 
-        //перейти в раздел вики
+        //перейти в раздел Wiki
         $(".UnderlineNav-body").$(byText("Wiki")).parent().click();
+
         //найти раздел SoftAssertions
         $(".f6.Link--muted.js-wiki-more-pages-link.btn-link.mx-auto").click();
         $(".Layout-sidebar").shouldHave(text("SoftAssertions"));
