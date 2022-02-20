@@ -24,4 +24,12 @@ public class DragAndDropTest {
         boxA.dragAndDropTo(boxB);
         $$(".column").first().$("header").shouldHave(text("B"));
     }
+
+    @Test
+    void dragAndDropWithActions() {
+        $$(".column").first().$("header").shouldHave(text("A"));
+        actions().moveToElement($(boxA)).clickAndHold().moveToElement(boxB).release().perform();
+        $$(".column").first().$("header").shouldHave(text("B"));
+
+    }
 }
